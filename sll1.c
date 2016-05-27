@@ -157,20 +157,22 @@ void insert_after_value()
         p=start;
         printf("Enter the value after which you want to insert a node");
         scanf("%d",&x);
-        while(p->info!=x && p!=NULL)
+        while(p->info!=x && p->next!=NULL)
         {
             p=p->next;
         }
-        if(p==NULL)
+        if(p->info!=x)
         {
             printf("Value not found:\n");
-            return;
         }
-        printf("Enter the number in the new node:\n");
-        scanf("%d",&new->info);
-        new->next=NULL;
-        new->next=p->next;
-        p->next=new;
+        else
+        {
+            printf("Enter the number in the new node:\n");
+            scanf("%d",&new->info);
+            new->next=NULL;
+            new->next=p->next;
+            p->next=new;
+        }
         printf("Do you want to insert more elements:\nPress Y or N:");
         scanf(" %c",&ch);
     }while(ch=='Y'||ch=='y');
