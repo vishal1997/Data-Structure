@@ -1,6 +1,6 @@
 struct Node *del_at_position(struct Node *head, int position)
 {
-	int count=0;
+	int count=1;
 	struct Node *ptr=head, *prev=NULL;
 	if(position==1)
 	{
