@@ -2,16 +2,26 @@ void search(struct Node *head, int data)
 {
 	struct Node *ptr=head;
 	int position=0;
-	while(ptr!=NULL && ptr->data!=data)
+	int flag=0;
+	while(ptr!=NULL)
 	{
-		position++;
-		ptr=ptr->next;
+	    if(ptr->data==data)
+        {
+            flag=1;
+            break;
+        }
+        else
+        {
+            position++;
+            ptr=ptr->next;
+        }
 	}
-	if(ptr->data==data)
+
+	if(flag)
 	{
 		printf("\nData found at %d",position);
 	}
-	else if(ptr==NULL)
+	else
 		printf("\nData Not found");
     return;
 }
