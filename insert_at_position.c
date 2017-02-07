@@ -4,7 +4,7 @@ struct Node *insert_at_position(struct Node *head, int position, int data)
 	struct Node *new_node=(struct Node *)malloc(sizeof(struct Node));
 	new_node->data=data;
 	new_node->next=NULL;
-	int count=0;
+	int count=1;
 	if(position==1)
 	{
 		new_node->next=ptr;
